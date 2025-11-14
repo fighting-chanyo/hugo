@@ -1,0 +1,274 @@
+baseurl: https://fighting-chanyo.jp/
+languageCode: ja
+theme: hugo-theme-stack
+title: 弱気よわよわエンジニアchanyoのブログ
+copyright: chanyo
+
+# Theme i18n support
+# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+DefaultContentLanguage: ja
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage: true
+
+languages:
+    ja:
+        languageName: 日本語
+        title: 弱気よわよわエンジニアchanyoのブログ
+        weight: 1
+        params:
+            sidebar:
+                subtitle: よわよわなりに頑張っているブログ。もといチラシの裏。
+    #zh-cn:
+    #    languageName: 中文
+    #    title: 演示站点
+    #    weight: 2
+    #    params:
+    #        sidebar:
+    #            subtitle: 演示说明
+    #ar:
+    #    languageName: عربي
+    #    languagedirection: rtl
+    #    title: موقع تجريبي
+    #    weight: 3
+    #    params:
+    #        sidebar:
+    #            subtitle: وصف تجريبي
+
+services:
+    # Change it to your Disqus shortname before using
+    disqus:
+        shortname: "hugo-theme-stack"
+    # GA Tracking ID
+    googleAnalytics:
+        id:
+
+pagination:
+    pagerSize: 6
+
+permalinks:
+    post: /p/:slug/
+    page: /:slug/
+
+params:
+    mainSections:
+        - post
+    featuredImageField: image
+    rssFullContent: true
+    favicon: /favicon.ico # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+
+    footer:
+        since: 2025
+        customText:
+
+    dateFormat:
+        published: "2006年01月02日"
+        lastUpdated: "2006年01月02日 15:04"
+
+    sidebar:
+        emoji: 🐱
+        subtitle: 弱気でよわよわな社内SE
+        avatar:
+            enabled: true
+            local: true
+            src: img/avatar.png
+
+    article:
+        math: false
+        toc: true
+        readingTime: true
+        license:
+            enabled: false
+            default: Licensed under CC BY-NC-SA 4.0
+
+    comments:
+        enabled: true
+        provider: giscus
+
+        disqusjs:
+            shortname:
+            apiUrl:
+            apiKey:
+            admin:
+            adminLabel:
+
+        utterances:
+            repo:
+            issueTerm: pathname
+            label:
+
+        beaudar:
+            repo:
+            issueTerm: pathname
+            label:
+            theme:
+
+        remark42:
+            host:
+            site:
+            locale:
+
+        vssue:
+            platform:
+            owner:
+            repo:
+            clientId:
+            clientSecret:
+            autoCreateIssue: false
+
+        # Waline client configuration see: https://waline.js.org/en/reference/component.html
+        waline:
+            serverURL:
+            lang:
+            pageview:
+            emoji:
+                - https://unpkg.com/@waline/emojis@1.0.1/weibo
+            requiredMeta:
+                - name
+                - email
+                - url
+            locale:
+                admin: Admin
+                placeholder:
+
+        twikoo:
+            envId:
+            region:
+            path:
+            lang:
+
+        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+        cactus:
+            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+            serverName: "cactus.chat"
+            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+
+        giscus:
+            repo: "fighting-chanyo/blog"
+            repoID: "R_kgDOQurcwQ"
+            category: "General"
+            categoryID: "DIC_kwDOQurcw4CxvPi"
+            mapping: "pathname"
+            strict: 0
+            reactionsEnabled: 1
+            emitMetadata: 0
+            inputPosition: "bottom"
+            theme: "preferred_color_scheme"
+            lang: "ja"
+            loading: "lazy"
+
+        gitalk:
+            owner:
+            admin:
+            repo:
+            clientID:
+            clientSecret:
+            proxy:
+
+        cusdis:
+            host:
+            id:
+    widgets:
+        homepage:
+            - type: search
+            - type: categories
+              params:
+                  limit: 20
+            - type: tag-cloud
+              params:
+                  limit: 20
+            - type: archives
+              params:
+                  limit: 12
+        page:
+            - type: toc
+            - type: related
+              params:
+                limit: 5
+
+    opengraph:
+        twitter:
+            # Your Twitter username
+            site:
+
+            # Available values: summary, summary_large_image
+            card: summary_large_image
+
+    defaultImage:
+        opengraph:
+            enabled: true
+            local: true
+            src: img/ogp.png
+
+    colorScheme:
+        # Display toggle
+        toggle: true
+
+        # Available values: auto, light, dark
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+### Custom menu
+### See https://stack.jimmycai.com/config/menu
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+menu:
+    main: []
+
+    #social:
+     #   - identifier: github
+      #    name: GitHub
+       #   url: https://github.com/CaiJimmy/hugo-theme-stack
+        #  params:
+         #     icon: brand-github
+
+     #   - identifier: twitter
+      #   url: https://twitter.com
+       #   params:
+        #      icon: brand-twitter
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        extensions:
+            passthrough:
+                enable: true
+                delimiters:
+                    block:
+                        - - \[
+                          - \]
+                        - - $$
+                          - $$
+                    inline:
+                        - - \(
+                          - \)
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
