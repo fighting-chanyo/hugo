@@ -146,7 +146,7 @@ params:
 
         giscus:
             repo: "fighting-chanyo/blog"
-            repoID: "R_kgDOQurcwQ"
+            repoID: "R_kgDOQUrcwQ"
             category: "comments"
             categoryID: "DIC_kwDOQUrcwc4Cxyd6"
             mapping: "pathname"
