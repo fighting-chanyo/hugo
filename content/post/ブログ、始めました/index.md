@@ -10,6 +10,7 @@ tags = [
     "ブログ",
 ]
 #image = "the-creative-exchange-d2zvqp3fpro-unsplash.jpg"
+comments = true
 +++
 
 ブログ、はじめちゃいました。
