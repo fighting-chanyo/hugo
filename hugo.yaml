@@ -147,8 +147,8 @@ params:
         giscus:
             repo: "fighting-chanyo/blog"
             repoID: "R_kgDOQurcwQ"
-            category: "General"
-            categoryID: "DIC_kwDOQurcw4CxvPi"
+            category: "Announcements"
+            categoryID: "DIC_kwDOQUrcwc4CxvPh"
             mapping: "pathname"
             strict: 0
             reactionsEnabled: 1
