@@ -26,7 +26,7 @@ tags = [
 まず、最初にAGAとその対策としては、以下のYouTuberの方の動画を見れば良いと思います。私からこれ以上の事は何も言えません。
 <br><br>
 
-<div style="width: 70%; margin: auto;">
+<div style="width: 100%; max-width: 700px; margin: auto;">
 {{< youtube nbC6_qJwbaE >}}
 </div>
 
@@ -47,13 +47,13 @@ tags = [
 では、今現在の私の頭部状況を公開します。心臓の弱い方はこの先十分注意してお読みください。
 <br><br><br><br><br><br>
 <p align="center">
-<img src="c0_front.jpg" width="60%" />
+<img src="c0_front.jpg" style="width: 100%; max-width: 500px;"/>
 </p>
 <br><br>
 画像の通り、僕のプレイスタイルは、M字HAGEです。両翼がピッチのサイドを切り裂き、敵を相手陣内に釘付けにします。
 <br><br>
 <p align="center">
-<img src="c0_above.jpg" width="60%" />
+<img src="c0_above.jpg" style="width: 100%; max-width: 500px;"/>
 </p>
 <br><br>
 頭頂部は、サイドレーンよりはまだ耐えているかなと思っていますが、いつ焼け野原にされるか分かりませんので、こちらの写真も投稿していこうと思います。
