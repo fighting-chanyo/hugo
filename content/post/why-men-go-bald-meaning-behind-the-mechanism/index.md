@@ -1,6 +1,6 @@
 +++
 author = "chanyo"
-title = "テスト投稿なぜ男性はハゲてしまうのか、その仕組みが生まれた意味を考えてみた"
+title = "テスト　　なぜ男性はハゲてしまうのか、その仕組みが生まれた意味を考えてみた"
 date = "2025-11-24"
 description = "テスト"
 slug = "why-men-go-bald-meaning-behind-the-mechanism" 
@@ -182,7 +182,7 @@ tags = [
 
 
 
-![1000001173.png](img-0649727e.png)
+![1000001173.png](img-6047ad20.png)
 
 
 <br>
