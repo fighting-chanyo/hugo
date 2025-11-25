@@ -51,7 +51,7 @@ jobs:
             git add state.json
             
             # ★重要: [skip ci] を入れると、このコミットではActionが再起動しない
-            git commit -m "📝 Update posts & timestamp [skip ci]"
+            git commit -m "📝 Update posts & timestamp"
             
             git push origin main
           else
