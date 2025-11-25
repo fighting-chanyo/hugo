@@ -47,16 +47,13 @@ tags = [
 やり方は、もうね、すごい人たちの記事がたくさんあります。
 
 
-[https://zenn.dev/seita1996/articles/hugo-markdown-blog](https://zenn.dev/seita1996/articles/hugo-markdown-blog)
+[HugoとCloudFlare Pagesでブログ公開](https://shirakamo-lab.com/post/blog_hugo_cloudflare_pages/)
 
 
-[https://shirakamo-lab.com/post/blog_hugo_cloudflare_pages/](https://shirakamo-lab.com/post/blog_hugo_cloudflare_pages/)
+[Hugo × Cloudflareで簡単ブログ構築](https://zenn.dev/seita1996/articles/hugo-markdown-blog)
 
 
 とか。他にも色んな方が書いてくれてます。僕の出る幕はありません。
-
-
-<br>
 
 
 <br>
@@ -87,6 +84,63 @@ tags = [
 
 
 <br>
+
+
+だから、私のようなスマホ依存症患者でもブログを書けるような環境を作りました。
+
+
+<br>
+
+
+ざっくり構成としては以下のようになります。（ナノバナナってすごいよね。）
+
+
+![image.png](img-4970e632.png)
+
+
+Notionに記事を書けば、それがブログ記事として公開される仕組みです。なぜNotionなのかというと、たまたま私が使った事があったからです。見出しとか太字とか画像貼り付けとか、そういったブログに必要な文章をNotionは書きやすいと感じています。スマホでも。
+
+
+<br>
+
+
+ただ、厳密には、Github Actionsも手動で実行する運用をしているのですが、これはスマホのウィジェットを1タップすれば良いので、全然面倒じゃないです。むしろ、手動実行のほうが、ミスや事故なく公開できるので良いなと今は思っています。
+
+
+<br>
+
+
+<br>
+
+
+これを実現するのに、必要なステップはざっくり以下です。
+
+1. Cloudflare PagesとGithubを連携し、Hugoを使ってサイトページを生成、自動デプロイできるようにする。（[この記事の前半](/2b51195a2299808ba389f2f15bcdecf5#2b61195a2299802ba011d9c2cc299d3b)で紹介した記事などで完了する範囲。）
+2. Notionに記事を格納するためのデータベースを準備する。
+3. Notionからデータベース内の情報をAPIで読み込めるように準備する。
+4. Notionから記事データを読み取り、加工処理を施した上で、ブログ用Githubリポジトリを更新するプログラムを作成する。
+5. 4のプログラムをGithub Actionsに設定し、スマホから実行できるようにする。
+
+<br>
+
+
+簡単に紹介しようと思います。（ステップ1は割愛します。）
+
+
+### Notionに記事を格納するためのデータベースを準備する
+
+
+データベースの作り方は色々ネットに上がっていますが、例えばこれなど。
+[https://seleck.cc/1456](https://seleck.cc/1456)
+
+
+<br>
+
+
+で、このデータベースをブログ記事管理用にプロパティを設定します。私の場合はこうなっています。
+
+
+![image.png](img-af4ee46f.png)
 
 
 <br>
