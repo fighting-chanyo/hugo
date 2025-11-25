@@ -1,0 +1,59 @@
+name: Notion Sync Bot
+
+on:
+  # 基本は手動実行（スマホからのトリガーもこれに含まれる）
+  workflow_dispatch:
+    inputs:
+      force_full_sync:
+        description: 'Force Full Sync'
+        required: false
+        default: 'false'
+  
+  # 定期実行も一応残しておく（バックアップとして）
+  schedule:
+    - cron: '0 0 * * *' # 毎日1回くらいにしておく
+
+jobs:
+  sync-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Sync Script
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          FORCE_FULL_SYNC: ${{ inputs.force_full_sync }}
+        run: node scripts/sync-notion.js
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Notion Sync Bot"
+          git config --global user.email "actions@github.com"
+          
+          # 変更があるか確認
+          if [[ -n $(git status --porcelain) ]]; then
+            # 記事と、時間の記録ファイル(state.json)を追加
+            git add content/post
+            git add state.json
+            
+            # ★重要: [skip ci] を入れると、このコミットではActionが再起動しない
+            git commit -m "📝 Update posts & timestamp [skip ci]"
+            
+            git push origin main
+          else
+            echo "変更なし"
+          fi

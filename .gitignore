@@ -1,0 +1,15 @@
+# パスワードファイル（絶対に見せない！）
+.env
+
+# Node.jsのライブラリ（重いので上げない。サーバー側でインストールさせる）
+node_modules/
+npm-debug.log
+
+# Hugoのビルド生成物（Cloudflareが作るので上げなくていい）
+public/
+resources/
+.hugo_build.lock
+
+# OSのゴミファイル
+.DS_Store
+Thumbs.db

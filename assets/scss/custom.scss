@@ -5,3 +5,24 @@
   --base-font-family: "Lato", var(--sys-font-family), var(--ja-font-family), sans-serif;
   --code-font-family: Menlo, Monaco, Consolas, "Courier New", var(--ja-font-family), monospace;
 }
+/* ① キャプション（画像のファイル名など）を消す */
+figcaption, .caption {
+    display: none !important;
+}
+
+/* 修正版：もっと強制的に小さくする */
+.post-content img, article img, .entry-content img { /* 一般的なクラス名を網羅 */
+    max-width: 500px !important; /* PCでこれ以上大きくならないようにする */
+    width: 100%;                 /* スマホでは画面幅に合わせる */
+    height: auto;
+    display: block;
+    margin: 2rem auto;           /* 中央寄せ */
+    object-fit: contain;         /* 縦横比を崩さない */
+}
+
+/* スマホの時だけは少し大きく見せる（お好みで） */
+@media screen and (max-width: 768px) {
+    .post-content img, article img, .entry-content img {
+        max-width: 100% !important;
+    }
+}
