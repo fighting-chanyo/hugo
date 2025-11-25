@@ -26,3 +26,19 @@ figcaption, .caption {
         max-width: 100% !important;
     }
 }
+
+/* Notion風の行間にする設定 */
+
+.post-content p, article p {
+    /* 段落の下の余白を狭くする */
+    margin-bottom: 0.8rem !important;  /* ここを調整（標準は1.5remくらい） */
+    margin-top: 0 !important;
+    
+    /* 文字自体の行間（読みやすさのためここは少し開けるのがおすすめ） */
+    line-height: 1.7 !important;
+}
+
+/* ついでに、リスト（箇条書き）の隙間も狭くする */
+.post-content ul, .post-content ol, article ul, article ol {
+    margin-bottom: 0.8rem !important;
+}
