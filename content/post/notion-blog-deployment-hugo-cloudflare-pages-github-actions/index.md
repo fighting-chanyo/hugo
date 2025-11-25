@@ -14,7 +14,7 @@ tags = [
 +++
 
 
-# Hugo+Cloudflare Pagesでブログ運営
+## Hugo+Cloudflare Pagesでブログ運営
 
 
 私のこのブログ、サイトのデザインはイケてるでしょ。
@@ -47,13 +47,10 @@ tags = [
 やり方は、もうね、すごい人たちの記事がたくさんあります。
 
 
-[bookmark](https://zenn.dev/seita1996/articles/hugo-markdown-blog)
+[https://zenn.dev/seita1996/articles/hugo-markdown-blog](https://zenn.dev/seita1996/articles/hugo-markdown-blog)
 
 
-[bookmark](https://shirakamo-lab.com/post/blog_hugo_cloudflare_pages/)
-
-
-<br>
+[https://shirakamo-lab.com/post/blog_hugo_cloudflare_pages/](https://shirakamo-lab.com/post/blog_hugo_cloudflare_pages/)
 
 
 とか。他にも色んな方が書いてくれてます。僕の出る幕はありません。
@@ -77,7 +74,7 @@ tags = [
 <br>
 
 
-# Notionに記事を書き、そのままブログに投稿する方法
+## Notionに記事を書き、そのままブログに投稿する方法
 
 
 上記の仕組みめっちゃ良かったのですが、僕みたいな弱エンジニアは、パソコンとかあまり開きたくないんですよね。プライベートで。
@@ -92,5 +89,5 @@ tags = [
 <br>
 
 
-だから、
+<br>
 
