@@ -1,6 +1,6 @@
 +++
 author = "chanyo"
-title = "Notionで書いた文章をブログ記事として自動でデプロイまでやる方法(Hugo/Cloudflare pages/github actions)"
+title = "Notionで書いた文章をブログ記事として自動でデプロイまでやる方法(Hugo/Cloudflare Pages/Github Actions)"
 date = "2025-11-25"
 description = "このブログは寝っ転がってnotion で書いているのです"
 slug = "notion-blog-deployment-hugo-cloudflare-pages-github-actions" 
@@ -95,7 +95,7 @@ tags = [
 ざっくり構成としては以下のようになります。（ナノバナナってすごいよね。）
 
 
-![image.png](img-9d8259db.png)
+![image.png](img-2a1cc6b4.png)
 
 
 Notionに記事を書けば、それがブログ記事として公開される仕組みです。なぜNotionなのかというと、たまたま私が使った事があったからです。見出しとか太字とか画像貼り付けとか、そういったブログに必要な文章をNotionは書きやすいと感じています。スマホでも。
@@ -140,7 +140,7 @@ Notionに記事を書けば、それがブログ記事として公開される�
 で、このデータベースをブログ記事管理用にプロパティを設定します。私の場合はこうなっています。
 
 
-![image.png](img-b5d9abc3.png)
+![image.png](img-edf7d490.png)
 
 
 データベースの各プロパティ
@@ -182,6 +182,12 @@ https://zenn.dev/kou_pg_0131/articles/notion-api-usage
 
 
 ### Notionから記事データを読み取り、加工処理を施した上で、ブログ用Githubリポジトリを更新するプログラムを作成する
+
+
+ブログを書くNotionデータベースと、それをAPIで読み取る準備ができたので、あとはそのデータを加工してGithubリポジトリに投稿するプログラムが必要になります。
+
+
+私はこのプログラムをGithub Actionsで実行させています。その場合、言語は大体なんでも対応してくれてるのですが、私はJavaScript(Node.js)で作成しました。
 
 
 <br>
